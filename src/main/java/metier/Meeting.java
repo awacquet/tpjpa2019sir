@@ -69,7 +69,7 @@ public class Meeting
         this.date = date;
     }
 
-    @ManyToMany(mappedBy = "meetings", cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     public List<User> getAttendees()
     {
         return attendees;
