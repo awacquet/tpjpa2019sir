@@ -6,7 +6,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JpaTest {
+public class JpaTest
+{
 
     private EntityManager manager;
     private User timedUser = new User("Dupont", "Corentin", "cdupont@test.fr");
@@ -16,14 +17,16 @@ public class JpaTest {
     private Location timedLocation = new Location("25 Rue de Saint-Brieuc", "Pordic");
     private List<Meeting> timedMeetingList = new ArrayList<>();
 
-    public JpaTest(EntityManager manager) {
+    public JpaTest(EntityManager manager)
+    {
         this.manager = manager;
     }
 
     /**
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("mysql");
         EntityManager manager = factory.createEntityManager();
@@ -31,13 +34,16 @@ public class JpaTest {
 
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
-        try {
+        try
+        {
             test.createUser();
             test.createLocation();
             test.createDate();
             test.createMeeting();
             test.createSurvey();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
         tx.commit();
@@ -47,9 +53,11 @@ public class JpaTest {
         System.out.println(".. done");
     }
 
-    private void createUser() {
+    private void createUser()
+    {
         int numOfUsers = manager.createQuery("SELECT u FROM User u", User.class).getResultList().size();
-        if (numOfUsers == 0) {
+        if (numOfUsers == 0)
+        {
             manager.persist(timedUser);
             User temp = new User("Dupond", "Lucien", "cdupont@test.fr");
             User temp2 = new User("Dupomp", "Mick", "cdupont@test.fr");
@@ -64,9 +72,11 @@ public class JpaTest {
         }
     }
 
-    private void createLocation() {
+    private void createLocation()
+    {
         int numOfLoc = manager.createQuery("SELECT l FROM Location l", Location.class).getResultList().size();
-        if (numOfLoc == 0) {
+        if (numOfLoc == 0)
+        {
             manager.persist(timedLocation);
             manager.persist(new Location("14 Rue de Tréméloir", "Paris"));
             manager.persist(new Location("6 Rue de Cesson", "Rennes"));
@@ -74,9 +84,11 @@ public class JpaTest {
         }
     }
 
-    private void createDate() {
+    private void createDate()
+    {
         int numOfDates = manager.createQuery("SELECT d FROM Date d", Date.class).getResultList().size();
-        if (numOfDates == 0) {
+        if (numOfDates == 0)
+        {
             Date d2 = new Date(17, 10, 2018, false);
             Date d3 = new Date(8, 11, 2018, true);
             Date d4 = new Date(25, 3, 2018, false);
@@ -91,9 +103,11 @@ public class JpaTest {
         }
     }
 
-    private void createMeeting() {
+    private void createMeeting()
+    {
         int numOfMeets = manager.createQuery("SELECT m FROM Meeting m", Meeting.class).getResultList().size();
-        if (numOfMeets == 0) {
+        if (numOfMeets == 0)
+        {
             Meeting m1 = new Meeting("1ere Reunion", "Reunion de test", "3535", timedDate, timedLocation, timedUserList);
             Meeting m2 = new Meeting("2eme Reunion", "Reunion de lancement", "2222", timedDate, timedLocation, timedUserList);
             Meeting m3 = new Meeting("Grande Reunion", "Reunion visant à présenter les futurs produits", "2929", timedDate, timedLocation, timedUserList);
@@ -109,9 +123,11 @@ public class JpaTest {
         }
     }
 
-    private void createSurvey() {
+    private void createSurvey()
+    {
         int numOfSurv = manager.createQuery("SELECT s FROM Survey s", Survey.class).getResultList().size();
-        if (numOfSurv == 0) {
+        if (numOfSurv == 0)
+        {
             List<Date> l1 = new ArrayList<>();
             List<Date> l2 = new ArrayList<>();
             l1.add(timedDateList.get(0));
@@ -123,18 +139,26 @@ public class JpaTest {
         }
     }
 
-    public void createUser(String name, String firstname, String email) {
+    public void createUser(String name, String firstname, String email)
+    {
         manager.persist(new User(name, firstname, email));
     }
 
-    private List<User> getUser(String name) {
+    private List<User> getUser(String name)
+    {
         String query = "SELECT u FROM User u WHERE u.name LIKE :name";
         return manager.createQuery(query, User.class).setParameter("name", name).getResultList();
     }
 
-    public List<User> getUser() {
+    public List<User> getUser()
+    {
         String query = "SELECT u FROM User u";
         return manager.createQuery(query, User.class).getResultList();
     }
 
+    public List<Survey> getSurveyList()
+    {
+        String query = "SELECT s FROM Survey s";
+        return manager.createQuery(query, Survey.class).getResultList();
+    }
 }

@@ -17,8 +17,8 @@ import java.io.PrintWriter;
 import java.util.List;
 
 @WebServlet(name = "userlist",
-        urlPatterns = {"/UserList"})
-public class UserList extends HttpServlet
+        urlPatterns = {"/UserAdd"})
+public class UserAdd extends HttpServlet
 {
     private JpaTest jpaLink;
 

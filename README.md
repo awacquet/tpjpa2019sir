@@ -4,12 +4,16 @@ Application de sondage pour la prise de rendez vous.
 
 Note: voir le fichier DESIGN.md pour connaitre l'arborescence du projet et trouver les réponses au TP03.
 
+Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail à rendre est arrivée assez tardivement.
+
 ## Fonctionnalités implémentées
 
 #### Servlet:
 
 * Création d'un utilisateur
 * Affichage de tous les utilisateur
+* Création d'un sondage
+* Affichage des sondages
 
 #### REST:
 
@@ -22,7 +26,6 @@ Note: voir le fichier DESIGN.md pour connaitre l'arborescence du projet et trouv
 
 #### Servlet:
 
-* Création d'un sondage
 * Participation à un sondage
 * Ajout des préférences alimentaires
 * Voir résultats du sondage
