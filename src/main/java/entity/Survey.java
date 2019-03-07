@@ -10,6 +10,14 @@ public class Survey {
     private Meeting meeting;
     private List<Date> availableChoices;
 
+    public Survey() {
+    }
+
+    public Survey(Meeting meeting, List<Date> availableChoices) {
+        this.meeting = meeting;
+        this.availableChoices = availableChoices;
+    }
+
     @Id
     @GeneratedValue
     public long getId()
@@ -33,7 +41,7 @@ public class Survey {
         this.meeting = meeting;
     }
 
-    @OneToMany
+    @OneToMany(fetch=FetchType.EAGER)
     public List<Date> getAvailableChoices()
     {
         return availableChoices;

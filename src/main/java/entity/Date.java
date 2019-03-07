@@ -14,6 +14,16 @@ public class Date extends ChoiceType
     private int year;
     private boolean pause;
 
+    public Date() {
+    }
+
+    public Date(int day, int month, int year, boolean pause) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.pause = pause;
+    }
+
     @Id
     @GeneratedValue
     public long getId()

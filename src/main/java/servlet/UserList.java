@@ -56,8 +56,8 @@ public class UserList extends HttpServlet
         manager.persist(new User(req.getParameter("name"), req.getParameter("firstname"), req.getParameter("email")));
         tx.commit();
         PrintWriter out = resp.getWriter();
-        out.println("<HTML><BODY> OK c'est fait" +
-                req.getParameter("name") + req.getParameter("firstname") + req.getParameter("email") +
+        out.println("<HTML><BODY> OK c'est fait : " +
+                req.getParameter("name") + " " +  req.getParameter("firstname") + " - " + req.getParameter("email") +
                 "</BODY></HTML>");
     }
 }

@@ -16,6 +16,18 @@ public class Meeting
 
     private List<User> attendees;
 
+    public Meeting() {
+    }
+
+    public Meeting(String title, String summary, String accessCode, Date date, Location location, List<User> attendees) {
+        this.title = title;
+        this.summary = summary;
+        this.accessCode = accessCode;
+        this.date = date;
+        this.location = location;
+        this.attendees = attendees;
+    }
+
     @Id
     @GeneratedValue
     public long getId()
@@ -69,7 +81,7 @@ public class Meeting
         this.date = date;
     }
 
-    @ManyToMany(mappedBy = "meetings", cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch=FetchType.EAGER)
     public List<User> getAttendees()
     {
         return attendees;

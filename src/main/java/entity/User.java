@@ -1,5 +1,7 @@
 package entity;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +66,8 @@ public class User {
 		this.mail = mail;
 	}
 
-	@ManyToMany(cascade = CascadeType.PERSIST)
+	@JsonIgnore
+	@ManyToMany(mappedBy = "attendees", cascade = CascadeType.PERSIST)
 	public List<Meeting> getMeetings()
 	{
 		return meetings;

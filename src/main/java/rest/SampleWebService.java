@@ -1,4 +1,4 @@
-package fr.istic.sir.rest;
+package rest;
 
 import entity.User;
 
@@ -22,9 +22,9 @@ public class SampleWebService
     @Produces(MediaType.APPLICATION_JSON)
     public User getUser() {
         User u = new User();
-        u.setName("toto");
-        u.setFirstName("dupont");
-        u.setMail("ok ok");
+        u.setName("Dupont");
+        u.setFirstName("Corentin");
+        u.setMail("cordupont@gmail.com");
         return u;
     }
 }

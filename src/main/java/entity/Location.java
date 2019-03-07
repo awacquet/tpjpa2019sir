@@ -5,11 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Location
+public class Location extends ChoiceType
 {
     long id;
     String adress;
     String city;
+
+    public Location() {
+    }
+
+    public Location(String adress, String city) {
+        this.adress = adress;
+        this.city = city;
+    }
 
     @Id @GeneratedValue
     public long getId()
