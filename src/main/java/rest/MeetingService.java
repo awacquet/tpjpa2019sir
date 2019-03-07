@@ -36,7 +36,7 @@ public class MeetingService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")
     public Meeting getMeeting(@PathParam("id") long id) {
-
+        return null;
     }
 
 }
