@@ -2,10 +2,7 @@ package rest;
 
 import entity.Meeting;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -36,7 +33,18 @@ public class MeetingService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}")
     public Meeting getMeeting(@PathParam("id") long id) {
-        return null;
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        String query = "SELECT m FROM Meeting m WHERE m.id=:id";
+        Meeting meeting = null;
+        try {
+            meeting = (Meeting) manager.createQuery(query).setParameter("id", id).getSingleResult();
+        } catch (NoResultException e) {
+            meeting = new Meeting();
+        }
+        tx.commit();
+        manager.close();
+        return meeting;
     }
 
 }
