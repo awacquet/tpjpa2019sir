@@ -51,8 +51,6 @@ public class UserList extends HttpServlet
         EntityManager manager = factory.createEntityManager();
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
-//        jpaLink = new JpaTest(manager);
-//        jpaLink.createUser(req.getParameter("name"), req.getParameter("firstname"), req.getParameter("email"));
         manager.persist(new User(req.getParameter("name"), req.getParameter("firstname"), req.getParameter("email")));
         tx.commit();
         PrintWriter out = resp.getWriter();
