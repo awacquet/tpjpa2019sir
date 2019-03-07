@@ -14,6 +14,7 @@ Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail
 * Affichage de tous les utilisateur
 * Création d'un sondage
 * Affichage des sondages
+* Voir résultats du sondage
 
 #### REST:
 
@@ -28,7 +29,6 @@ Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail
 
 * Participation à un sondage
 * Ajout des préférences alimentaires
-* Voir résultats du sondage
 
 #### REST:
 

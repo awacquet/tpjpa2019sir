@@ -161,4 +161,10 @@ public class JpaTest
         String query = "SELECT s FROM Survey s";
         return manager.createQuery(query, Survey.class).getResultList();
     }
+
+    public Survey getSurvey(int id)
+    {
+        String query = "SELECT s FROM Survey s WHERE s.id = :id";
+        return manager.createQuery(query, Survey.class).setParameter("id", id).getSingleResult();
+    }
 }
