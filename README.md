@@ -2,6 +2,8 @@
 
 Application de sondage pour la prise de rendez vous.
 
+Note: voir le fichier DESIGN.md pour connaitre l'arborescence du projet et trouver les réponses au TP03.
+
 ## Fonctionnalités implémentées
 
 #### Servlet:
