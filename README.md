@@ -11,7 +11,7 @@ Note: voir le fichier DESIGN.md pour connaitre l'arborescence du projet et trouv
 * Création d'un utilisateur
 * Affichage de tous les utilisateur
 
-#### REST
+#### REST:
 
 * Récupération de la liste des sondages
 * Récupération d'un sondage
@@ -27,10 +27,18 @@ Note: voir le fichier DESIGN.md pour connaitre l'arborescence du projet et trouv
 * Ajout des préférences alimentaires
 * Voir résultats du sondage
 
-#### REST
+#### REST:
 
 * Récupérer la liste des réunions
 * Récupérer la liste des utilisateurs
+* Récupération des sondages créés par un utilisateur
+
+#### Autre:
+
+* Front-End
+* Tests Unitaires
+* Creation de la partie DAO
+* Correction des bugs trouvés
 
 ## Prise en main
 

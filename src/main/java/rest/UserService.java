@@ -1,4 +1,4 @@
-package fr.istic.sir.rest;
+package rest;
 
 import entity.User;
 
