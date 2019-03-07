@@ -1,6 +1,6 @@
 # Application Doodle
 
-Application de sondage pour la prise de rendez vous.
+Application de sondage pour la création de réunions.
 
 Note: voir le fichier DESIGN.md pour connaitre l'arborescence du projet et trouver les réponses au TP03.
 
@@ -11,17 +11,20 @@ Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail
 #### Servlet:
 
 * Création d'un utilisateur
-* Affichage de tous les utilisateur
+* Affichage de tous les utilisateurs
 * Création d'un sondage
 * Affichage des sondages
 * Voir résultats du sondage
 
 #### REST:
 
+* Récupération de la liste des réunions
+* Récupération d'une réunion
 * Récupération de la liste des sondages
 * Récupération d'un sondage
-* Ajout d'un utilisateur
+* Récupération de la liste des utilisateurs
 * Récupération d'un utilisateur
+* Ajout d'un utilisateur
 
 ## Fonctionnalités à venir
 
@@ -32,8 +35,6 @@ Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail
 
 #### REST:
 
-* Récupérer la liste des réunions
-* Récupérer la liste des utilisateurs
 * Récupération des sondages créés par un utilisateur
 
 #### Autre:
@@ -41,6 +42,7 @@ Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail
 * Front-End
 * Tests Unitaires
 * Creation de la partie DAO
+* Révision du diagramme UML en cas de fonctionnalités pas implémentables dans le futur
 * Correction des bugs trouvés
 
 ## Prise en main
@@ -64,7 +66,7 @@ Add as Maven Project
 Ou
 
 ```
-Maven>Reimport
+Maven → Reimport
 ```
 
 Ou toute autre manipulation relative a votre IDE favoris.
@@ -96,8 +98,6 @@ En fonction de la configuration de la base de donnée que vous utilisez. Vous po
 * **Barais Olivier** - *Créateur du squelette*
 * **Wacquet Adrien** - *Contributeur principal*
 * **Kupratsevitch Vadim** - *Contributeur principal*
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ### License
 

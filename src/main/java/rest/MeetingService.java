@@ -47,4 +47,17 @@ public class MeetingService {
         return meeting;
     }
 
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/user/{id}")
+    public Collection<Meeting> getUserParticipation(@PathParam("id") long id) {
+        EntityTransaction tx = manager.getTransaction();
+        tx.begin();
+        String query = "SELECT u.meetings FROM User u WHERE u.id = :id";
+        List<Meeting> meetings = new ArrayList<>(manager.createQuery(query).setParameter("id", id).getResultList());
+        tx.commit();
+        manager.close();
+        return meetings;
+    }
+
 }
