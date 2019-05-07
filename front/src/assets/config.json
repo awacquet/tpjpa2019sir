@@ -1,0 +1,5 @@
+{
+  "usersUrl": "api/User",
+  "surveyUrl": "api/survey",
+  "meetingUrl": "api/meeting"
+}

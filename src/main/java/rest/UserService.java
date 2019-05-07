@@ -21,7 +21,7 @@ public class UserService
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Collection<User> getMeetings() {
+    public Collection<User> getUsers() {
         EntityTransaction tx = manager.getTransaction();
         tx.begin();
         List<User> users = new ArrayList<>(manager.createQuery("SELECT u FROM User u").getResultList());

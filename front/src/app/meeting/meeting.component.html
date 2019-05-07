@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let meeting of meetings">
+    <div>{{ meeting.title }} - {{ meeting.summary }}</div>
+    <div>Code d'accès : {{ meeting.accessCode }}</div>
+    <!-- TODO : custom pipe pour afficher toute l'adresse via meeting.location-->
+    <div>Adresse : {{ meeting.location.adress }} - {{ meeting.location.city }}</div>
+  </li>
+</ul>

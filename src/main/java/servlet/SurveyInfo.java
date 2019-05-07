@@ -17,14 +17,14 @@ import java.io.PrintWriter;
 
 //todo: gérer le cas du null
 //todo: récupérer la bonne liste des votes
-@WebServlet(name = "userinfo",
+@WebServlet(name = "surveyinfo",
         urlPatterns = {"/SurveyInfo"})
 public class SurveyInfo extends HttpServlet
 {
 
     private JpaTest jpaLink;
 
-    public void doPost(HttpServletRequest request,
+    public void doGet(HttpServletRequest request,
                        HttpServletResponse response)
             throws ServletException, IOException
     {
