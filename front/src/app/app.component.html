@@ -1,3 +1,9 @@
-<app-meeting></app-meeting>
-<!--<app-config></app-config>-->
+<button (click)="toggleMeetings()">{{meetingBtn}}</button>
+<div *ngIf="showMeetings">
+  <app-meeting></app-meeting>
+</div>
+<button (click)="toggleUsers()">{{userBtn}}</button>
+<div *ngIf="showUsers">
+  <app-user></app-user>
+</div>
 <router-outlet></router-outlet>

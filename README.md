@@ -4,8 +4,6 @@ Application de sondage pour la création de réunions.
 
 Note: voir le fichier DESIGN.md pour connaitre l'arborescence du projet et trouver les réponses au TP03.
 
-Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail à rendre est arrivée assez tardivement.
-
 ## Fonctionnalités implémentées
 
 #### Servlet:
@@ -26,20 +24,33 @@ Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail
 * Récupération d'un utilisateur
 * Ajout d'un utilisateur
 
+#### Angular:
+* Mise en place d'un proxy entre le front et le back pour accéder à l'API REST
+    * http://localhost:4200/api/ → url de base à compléter par l'api visée
+        * User : liste des utilisateurs
+        * meeting : liste des réunions
+        * survey : liste des sondages
+    * Chacune de ces APIs peut recevoir un ID en paramètre (ajouter "/id")
+    * Si le port de votre API REST n'est pas 8080, il vous faudra modifier le fichier `proxy.conf.json`
+* Affichage des réunions (utilisation d'un service)
+* Affichage des utilisateurs (utilisation d'un service)
+
 ## Fonctionnalités à venir
 
 #### Servlet:
-
 * Participation à un sondage
 * Ajout des préférences alimentaires
 
 #### REST:
-
 * Récupération des sondages créés par un utilisateur
 
-#### Autre:
+#### Angular:
+* Utiliser du CSS
+* Préférer utiliser nginx à la place du proxy actuel
+* Mettre en place des services pour afficher plus d'éléments (récupération d'une réunion pour la modifier par exemple)
+* Mettre en place des formulaires (création d'utilisateur, de réunion, etc)
 
-* Front-End
+#### Autre:
 * Tests Unitaires
 * Creation de la partie DAO
 * Révision du diagramme UML en cas de fonctionnalités pas implémentables dans le futur
@@ -47,7 +58,7 @@ Note 2: Il manque beaucoup de fonctionnalités au projet car la liste du travail
 
 ## Prise en main
 
-Ces instructions vous permettront d'installer et tester le projet sur votre machine. Le projet est en phase Alpha et ne possède donc pas d'interface homme machine mais uniquement le Back-End.
+Ces instructions vous permettront d'installer et tester le projet sur votre machine.
 
 ### Pré-requis
 
@@ -84,6 +95,13 @@ Pour pouvoir utiliser JPA correctement il est nécessaire de configurer le fichi
 En fonction de la configuration de la base de donnée que vous utilisez. Vous pouvez trouver de l'aide pour la configuration grâce à [cet article](https://thoughts-on-java.org/jpa-persistence-xml/).
 
 **enfin n'ouliez pas de laisser le name du bloc à "mysql" et ce même si vous n'utilisez pas mysql comme moteur de BDD pour des raison de fonctionnement du code de l'application !**
+
+#### Partie 3
+
+Afin de lancer le nécessaire pour le fonctionnement du projet, il faut d'abord lancer votre base de données.  
+Ensuite il faudra lancer tomcat dont le répertoire de travail sera la racine du projet.  
+Enfin il faudra exécuter la commande `ng serve` dans le dossier `front`.
+La partie front-end sera ensuite accessible depuis http://localhost:4200/ (le port peut varier selon votre configuration).
 
 ## Crédits
 
